@@ -23,6 +23,7 @@ let emailInput = document.getElementById("emailInput")
 
 let emailApproved;
 
+let login = document.getElementById("login")
 
 emailSend.addEventListener("click", function(){
     let email = document.getElementById("emailInput").value;
@@ -40,7 +41,9 @@ emailSend.addEventListener("click", function(){
     
     if (emailApproved == "ok") {
         
-      hidden.style.display = "flex"
+      hidden.style.display = "flex";
+
+      login.style.display = "none";
 
     } else if (emailApproved == "not ok") {
         alert("Email non presente in archivio, riprova!")
