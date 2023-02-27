@@ -36,8 +36,8 @@ emailSend.addEventListener("click", function(){
     if (emailApproved == "ok") {
         
     } else if (emailApproved == "not ok") {
-        alert("Email non presente in archivio")
+        alert("Email non presente in archivio, riprova!")
     }
 
-    console.log(emailApproved)
+    
 });
