@@ -11,3 +11,33 @@
 6 Se il punteggio di uno dei due giocatori è ugale a 2 decretare il vincitore
 */
 
+let loginEmail = ["gabriele.saragosa@gmail.com", "saragosagabriele@gmail.com", "pincopallo@boolean.com", "lorem@ipsum.net"];
+
+let emailSend = document.getElementById("emailSend");
+
+let emailInput = document.getElementById("emailInput")
+
+let emailApproved;
+
+
+
+emailSend.addEventListener("click", function(){
+    let email = document.getElementById("emailInput").value;
+
+    emailApproved = "not ok"
+
+
+    for (let i = 0; i < loginEmail.length; i++) {
+        if (email == loginEmail[i]) {
+            emailApproved = "ok"
+          }
+    }
+    
+    if (emailApproved == "ok") {
+        
+    } else if (emailApproved == "not ok") {
+        alert("Email non presente in archivio")
+    }
+
+    console.log(emailApproved)
+});
