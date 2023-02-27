@@ -11,7 +11,11 @@
 6 Se il punteggio di uno dei due giocatori è ugale a 2 decretare il vincitore
 */
 
-let loginEmail = ["gabriele.saragosa@gmail.com", "saragosagabriele@gmail.com", "pincopallo@boolean.com", "lorem@ipsum.net"];
+alert("Per i tutor: email per iniziare lorem@boolean.com")
+
+//email section
+
+let loginEmail = ["lorem@boolean.com", "saragosagabriele@gmail.com", "pincopallo@boolean.com", "lorem@ipsum.net"];
 
 let emailSend = document.getElementById("emailSend");
 
@@ -20,9 +24,10 @@ let emailInput = document.getElementById("emailInput")
 let emailApproved;
 
 
-
 emailSend.addEventListener("click", function(){
     let email = document.getElementById("emailInput").value;
+
+    let hidden = document.getElementById("hidden");
 
     emailApproved = "not ok"
 
@@ -35,9 +40,71 @@ emailSend.addEventListener("click", function(){
     
     if (emailApproved == "ok") {
         
+      hidden.style.display = "flex"
+
     } else if (emailApproved == "not ok") {
         alert("Email non presente in archivio, riprova!")
     }
-
-    
 });
+
+//email section end
+
+//game section
+
+let startGame = document.getElementById("startGame");
+
+//lista dadi
+
+let diceFaces = ['<i class="fa-solid fa-dice-one"></i>', '<i class="fa-solid fa-dice-two"></i>', '<i class="fa-solid fa-dice-three"></i>', '<i class="fa-solid fa-dice-four"></i>', '<i class="fa-solid fa-dice-five"></i>', '<i class="fa-solid fa-dice-six"></i>'];
+
+//creo un contenitore per i dadi
+
+let diceContainer = document.getElementById("diceContainer")
+
+
+//genero randomicamente due dadi, uno per il giocatore l'altro per il pc quando premo il pulsante
+
+startGame.addEventListener("click", function(){
+  
+  let userDice = diceFaces[Math.floor(Math.random() * diceFaces.length)];
+  
+  let pcDice = diceFaces[Math.floor(Math.random() * diceFaces.length)];
+  
+  //creo due contenitori per i risultati e genero il risultato in pagina
+
+  let userDiceContainer = document.getElementById("userDiceContainer")
+
+  userDiceContainer.innerHTML = `Il tuo risultato è ${userDice}`;
+
+  let pcDiceContainer = document.getElementById("pcDiceContainer")
+
+  pcDiceContainer.innerHTML = `Il risultato bot è ${pcDice}`;
+
+  //controllo chi è il vincitore
+
+  //genero una scritta personalizzata in base al vincitore
+
+  let andWin = document.getElementById("andWin")
+
+  let infoUser = diceFaces.indexOf(userDice);
+
+  let infoPc = diceFaces.indexOf(pcDice);
+
+  if(infoUser > infoPc) {
+
+    andWin.innerHTML = "Il vincitore sei tu!";
+
+  } else if (infoUser < infoPc) {
+
+    andWin.innerHTML = "Le macchine hanno vinto!";
+
+  } else if (infoUser == infoPc) {
+    andWin.innerHTML = "Tu e il bot andate di paripasso con la fortuna!";
+  }
+
+});
+
+
+
+
+

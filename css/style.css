@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    font-family: sans-serif;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);    
+    width: 100%;
+    height: 100vh;
+}
+
+.center {
+    max-width: 1000px;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+.center .title {
+    color: #370617;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.center .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center .login label {
+    font-size: 1.5em;
+    padding: 30px 0;
+    color: ;
+}
+
+.center .login div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.center .login div #emailInput {
+    height: 40px;
+    width: 400px;
+    border-radius: 25px;
+    padding: 10px;
+    border: 0;
+    font-size: 20px;
+}
+
+.center .login div #emailSend {
+    padding: 13px 25px;
+    border-radius: 25px;
+    background: white;
+    border: 0;
+    cursor: pointer;
+}
+
+#hidden {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#hidden #startGame {
+    background-color: #370617;
+    color: white;
+    font-size: 20px;
+    padding: 20px 25px;
+    border: 0;
+    border-radius: 25px;
+}
+
+#hidden #diceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 30px;
+    align-items: center;
+}
+
+
+
