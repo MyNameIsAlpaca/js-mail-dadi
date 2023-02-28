@@ -45,7 +45,9 @@ emailSend.addEventListener("click", function(){
 
       login.style.display = "none";
 
-    } else if (emailApproved == "not ok") {
+    } 
+    
+    if (emailApproved == "not ok") {
         alert("Email non presente in archivio, riprova!")
     }
 });
